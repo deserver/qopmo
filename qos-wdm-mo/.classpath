@@ -3,5 +3,25 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="JMETALHOME"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/antlr-2.7.5.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/asm-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/asm-attrs-1.5.2.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/c3p0-0.9.0.4.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/cglib-nodep-2.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/commons-logging-1.0.3.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/ehcache-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/hibernate-commons-annotations-3.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/hibernate-core-3.6.9.Final.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/hibernate-entitymanager-3.6.9.Final.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/hibernate-validator-4.2.0.Final.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/postgresql-9.1-901.jdbc3.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/slf4j-log4j12-1.6.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
