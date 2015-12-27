@@ -1,11 +1,19 @@
 package qopmo.ag;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import jmetal.core.Solution;
+import jmetal.util.Configuration;
 import qopmo.wdm.Red;
 import qopmo.wdm.qop.EsquemaRestauracion;
 import qopmo.ag.operadores.OperadorCruce;
@@ -52,6 +60,10 @@ public class Poblacion {
 	private Solucion mejor;
 
 	private EsquemaRestauracion esquema;
+	
+	private List<Solution> solutionsList;
+	
+	private int capacity;
 
 	// List<String[]> datosMejores = new ArrayList<String[]>();
 
@@ -67,7 +79,14 @@ public class Poblacion {
 		this.hijos = new ArrayList<Individuo>();
 		this.mejor = new Solucion();
 		this.mejor.setFitness(0);
+		this.solutionsList = new ArrayList<Solution>();
+		this.capacity = 100;
 
+	}
+	
+	public Poblacion(int maximo){
+		this.solutionsList = new ArrayList<Solution>();
+		this.capacity = maximo;
 	}
 
 	public static Red getRed() {
@@ -86,6 +105,13 @@ public class Poblacion {
 		this.mejor = mejor;
 	}
 
+	public void setCapacity(int maximo){
+		this.capacity = maximo;
+	}
+	
+	public int getCapacity(){
+		return this.capacity;
+	}
 	/**
 	 * Función que obtiene el tamaño de la población
 	 * 
@@ -131,6 +157,8 @@ public class Poblacion {
 	public void setOperadorSeleccion(OperadorSeleccion operadorSeleccion) {
 		this.operadorSeleccion = operadorSeleccion;
 	}
+	
+
 
 	/**
 	 * Se mueve la población a la siguiente generación.
@@ -189,7 +217,7 @@ public class Poblacion {
 	 * 
 	 * @param selectos
 	 */
-	public void cruzar(Collection<Individuo> selectos) {
+	public Collection<Individuo> cruzar(Collection<Individuo> selectos) {
 
 		if (selectos == null)
 			throw new Error("No hay selección.");
@@ -230,6 +258,8 @@ public class Poblacion {
 
 			this.hijos.add(hijo);
 		}
+		
+		return this.individuos;
 
 	}
 
@@ -299,5 +329,222 @@ public class Poblacion {
 		builder.append("]");
 		return builder.toString();
 	}
+	/*
+	 * SolucionList operations
+	 */
+	
+	  /** 
+	   * Sorts a SolutionSet using a <code>Comparator</code>.
+	   * @param comparator <code>Comparator</code> used to sort.
+	   */
+	  public void sort(Comparator comparator){
+	    if (comparator == null) {
+	      Configuration.logger_.severe("No criterium for comparing exist");
+	      return ;
+	    } // if
+	    Collections.sort(solutionsList,comparator);
+	  } // sort
+	
+	  /** 
+	   * Empties the SolutionSet
+	   */
+	  public void clear(){
+	    solutionsList.clear();
+	  } // clear
 
+	  /** 
+	   * Inserts a new solution into the SolutionSet. 
+	   * @param solution The <code>Solution</code> to store
+	   * @return True If the <code>Solution</code> has been inserted, false 
+	   * otherwise. 
+	   */
+	  public boolean add(Solution solution) {
+	    if (solutionsList.size() == capacity) {
+	      Configuration.logger_.severe("The population is full");
+	      Configuration.logger_.severe("Capacity is : "+capacity);
+	      Configuration.logger_.severe("\t Size is: "+ this.size());
+	      return false;
+	    } // if
+
+	    solutionsList.add(solution);
+	    return true;
+	  } // add
+	  
+	  public int size(){
+		  return solutionsList.size();
+	  } // size
+	  
+	  /**
+	   * Returns the ith solution in the set.
+	   * @param i Position of the solution to obtain.
+	   * @return The <code>Solution</code> at the position i.
+	   * @throws IndexOutOfBoundsException Exception
+	   */
+	  public Solution get(int i) {
+	    if (i >= solutionsList.size()) {
+	      throw new IndexOutOfBoundsException("Index out of Bound "+i);
+	    }
+	    return solutionsList.get(i);
+	  } // get
+	  
+	  /** 
+	   * Returns the index of the best Solution using a <code>Comparator</code>.
+	   * If there are more than one occurrences, only the index of the first one is returned
+	   * @param comparator <code>Comparator</code> used to compare solutions.
+	   * @return The index of the best Solution attending to the comparator or 
+	   * <code>-1<code> if the SolutionSet is empty
+	   */
+	   int indexBest(Comparator comparator){
+	    if ((solutionsList == null) || (this.solutionsList.isEmpty())) {
+	      return -1;
+	    }
+
+	    int index = 0; 
+	    Solution bestKnown = solutionsList.get(0), candidateSolution;
+	    int flag;
+	    for (int i = 1; i < solutionsList.size(); i++) {        
+	      candidateSolution = solutionsList.get(i);
+	      flag = comparator.compare(bestKnown, candidateSolution);
+	      if (flag == +1) {
+	        index = i;
+	        bestKnown = candidateSolution; 
+	      }
+	    }
+
+	    return index;
+	  } // indexBest
+	   
+	   /** 
+	    * Returns the best Solution using a <code>Comparator</code>.
+	    * If there are more than one occurrences, only the first one is returned
+	    * @param comparator <code>Comparator</code> used to compare solutions.
+	    * @return The best Solution attending to the comparator or <code>null<code>
+	    * if the SolutionSet is empty
+	    */
+	   public Solution best(Comparator comparator){
+	     int indexBest = indexBest(comparator);
+	     if (indexBest < 0) {
+	       return null;
+	     } else {
+	       return solutionsList.get(indexBest);
+	     }
+
+	   } // best  
+	   
+	   /** 
+	    * Deletes the <code>Solution</code> at position i in the set.
+	    * @param i The position of the solution to remove.
+	    */
+	   public void remove(int i){        
+	     if (i > solutionsList.size()-1) {            
+	       Configuration.logger_.severe("Size is: "+this.size());
+	     } // if
+	     solutionsList.remove(i);    
+	   } // remove
+	   
+	   /**
+	    * Write the function values of feasible solutions into a file
+	    * @param path File name
+	    */
+	   public void printFeasibleFUN(String path) {
+	     try {
+	       FileOutputStream fos   = new FileOutputStream(path)     ;
+	       OutputStreamWriter osw = new OutputStreamWriter(fos)    ;
+	       BufferedWriter bw      = new BufferedWriter(osw)        ;
+
+	       for (Solution aSolutionsList_ : solutionsList) {
+	         if (aSolutionsList_.getOverallConstraintViolation() == 0.0) {
+	           bw.write(aSolutionsList_.toString());
+	           bw.newLine();
+	         }
+	       }
+	       bw.close();
+	     }catch (IOException e) {
+	       Configuration.logger_.severe("Error acceding to the file");
+	       e.printStackTrace();
+	     }
+	   }
+
+	   /**
+	    * Write the encodings.variable values of feasible solutions into a file
+	    * @param path File name
+	    */
+	   public void printFeasibleVAR(String path) {
+	     try {
+	       FileOutputStream fos   = new FileOutputStream(path)     ;
+	       OutputStreamWriter osw = new OutputStreamWriter(fos)    ;
+	       BufferedWriter bw      = new BufferedWriter(osw)        ;            
+
+	       if (size()>0) {
+	         int numberOfVariables = solutionsList.get(0).getDecisionVariables().length ;
+	         for (Solution aSolutionsList_ : solutionsList) {
+	           if (aSolutionsList_.getOverallConstraintViolation() == 0.0) {
+	             for (int j = 0; j < numberOfVariables; j++)
+	               bw.write(aSolutionsList_.getDecisionVariables()[j].toString() + " ");
+	             bw.newLine();
+	           }
+	         }
+	       }
+	       bw.close();
+	     }catch (IOException e) {
+	       Configuration.logger_.severe("Error acceding to the file");
+	       e.printStackTrace();
+	     }       
+	   }
+	   
+
+	   /** 
+	    * Writes the objective function values of the <code>Solution</code> 
+	    * objects into the set in a file.
+	    * @param path The output file name
+	    */
+	   public void printObjectivesToFile(String path){
+	     try {
+	       /* Open the file */
+	       FileOutputStream fos   = new FileOutputStream(path)     ;
+	       OutputStreamWriter osw = new OutputStreamWriter(fos)    ;
+	       BufferedWriter bw      = new BufferedWriter(osw)        ;
+
+	       for (Solution aSolutionsList_ : solutionsList) {
+	         //if (this.vector[i].getFitness()<1.0) {
+	         bw.write(aSolutionsList_.toString());
+	         bw.newLine();
+	         //}
+	       }
+
+	       /* Close the file */
+	       bw.close();
+	     }catch (IOException e) {
+	       Configuration.logger_.severe("Error acceding to the file");
+	       e.printStackTrace();
+	     }
+	   } // printObjectivesToFile
+
+	   /**
+	    * Writes the decision encodings.variable values of the <code>Solution</code>
+	    * solutions objects into the set in a file.
+	    * @param path The output file name
+	    */
+	   public void printVariablesToFile(String path){
+	     try {
+	       FileOutputStream fos   = new FileOutputStream(path)     ;
+	       OutputStreamWriter osw = new OutputStreamWriter(fos)    ;
+	       BufferedWriter bw      = new BufferedWriter(osw)        ;            
+
+	       if (size()>0) {
+	         int numberOfVariables = solutionsList.get(0).getDecisionVariables().length ;
+	         for (Solution aSolutionsList_ : solutionsList) {
+	           for (int j = 0; j < numberOfVariables; j++)
+	             bw.write(aSolutionsList_.getDecisionVariables()[j].toString() + " ");
+	           bw.newLine();
+	         }
+	       }
+	       bw.close();
+	     }catch (IOException e) {
+	       Configuration.logger_.severe("Error acceding to the file");
+	       e.printStackTrace();
+	     }       
+	   } // printVariablesToFile
+
+	  
 }

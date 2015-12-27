@@ -39,6 +39,17 @@ import java.util.HashMap;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
+import qopmo.nsgaII.QOP;
+import qopmo.ag.operadores.impl.*;
+import qopmo.ag.Poblacion;
+
 /** 
  * Class to configure and execute the NSGA-II algorithm.  
  *     
@@ -49,10 +60,11 @@ import java.util.logging.Logger;
  *                  5th International Conference, EMO 2009, pp: 183-197. 
  *                  April 2009)
  */ 
-
+@RunWith(Parameterized.class)
 public class NSGAII_main {
   public static Logger      logger_ ;      // Logger object
   public static FileHandler fileHandler_ ; // FileHandler object
+
 
   /**
    * @param args Command line arguments.
@@ -98,10 +110,11 @@ public class NSGAII_main {
       //problem = new Kursawe("Real", 3);
       //problem = new Kursawe("BinaryReal", 3);
       //problem = new Water("Real");
-      problem = new ZDT3("ArrayReal", 30);
+      //problem = new ZDT3("ArrayReal", 30);
       //problem = new ConstrEx("Real");
       //problem = new DTLZ1("Real");
       //problem = new OKA2("Real") ;
+      problem = new QOP();
     } // else
     
     algorithm = new NSGAII(problem);
@@ -112,7 +125,7 @@ public class NSGAII_main {
     algorithm.setInputParameter("maxEvaluations",25000);
 
     // Mutation and Crossover for Real codification 
-    parameters = new HashMap() ;
+    /*parameters = new HashMap() ;
     parameters.put("probability", 0.9) ;
     parameters.put("distributionIndex", 20.0) ;
     crossover = CrossoverFactory.getCrossoverOperator("SBXCrossover", parameters);                   
@@ -124,19 +137,21 @@ public class NSGAII_main {
 
     // Selection Operator 
     parameters = null ;
-    selection = SelectionFactory.getSelectionOperator("BinaryTournament2", parameters) ;                           
-
+    selection = SelectionFactory.getSelectionOperator("BinaryTournament2", parameters) ;  
+    */
+    
     // Add the operators to the algorithm
-    algorithm.addOperator("crossover",crossover);
+    /*algorithm.addOperator("crossover",crossover);
     algorithm.addOperator("mutation",mutation);
-    algorithm.addOperator("selection",selection);
+    algorithm.addOperator("selection",selection);*/
+    //algorithm.addOperator("torneobinario", torneobinario);
 
     // Add the indicator object to the algorithm
     algorithm.setInputParameter("indicators", indicators) ;
     
     // Execute the Algorithm
     long initTime = System.currentTimeMillis();
-    SolutionSet population = algorithm.execute();
+    Poblacion population = algorithm.execute();
     long estimatedTime = System.currentTimeMillis() - initTime;
     
     // Result messages 
@@ -146,7 +161,7 @@ public class NSGAII_main {
     logger_.info("Objectives values have been writen to file FUN");
     population.printObjectivesToFile("FUN");
   
-    if (indicators != null) {
+    /*if (indicators != null) {
       logger_.info("Quality indicators") ;
       logger_.info("Hypervolume: " + indicators.getHypervolume(population)) ;
       logger_.info("GD         : " + indicators.getGD(population)) ;
@@ -156,6 +171,6 @@ public class NSGAII_main {
      
       int evaluations = ((Integer)algorithm.getOutputParameter("evaluations")).intValue();
       logger_.info("Speed      : " + evaluations + " evaluations") ;      
-    } // if
+    } // if*/
   } //main
 } // NSGAII_main

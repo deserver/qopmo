@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/postgresql-9.1-901.jdbc3.jar"/>
 	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/slf4j-api-1.6.4.jar"/>
 	<classpathentry kind="lib" path="/home/sergio/IIN/Pasantia/Tesis Marcelo Rodas/qos-wdm/lib/slf4j-log4j12-1.6.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

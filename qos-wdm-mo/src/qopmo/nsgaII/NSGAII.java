@@ -21,12 +21,32 @@
 
 package qopmo.nsgaII;
 
+
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import jmetal.core.*;
 import jmetal.qualityIndicator.QualityIndicator;
 import jmetal.util.Distance;
 import jmetal.util.JMException;
 import jmetal.util.Ranking;
 import jmetal.util.comparators.CrowdingComparator;
+
+import qopmo.ag.operadores.impl.TorneoBinario;
+import qopmo.wdm.Red;
+import qopmo.wdm.qop.Caso;
+import qopmo.wdm.qop.EsquemaRestauracion;
+import qopmo.util.CSVWriter;
+import qopmo.ag.operadores.*;
+import qopmo.ag.Individuo;
+import qopmo.ag.Poblacion;
+import qopmo.ag.Solucion;
 
 /** 
  *  Implementation of NSGA-II.
@@ -46,6 +66,16 @@ public class NSGAII extends Algorithm {
   public NSGAII(Problem problem) {
     super (problem) ;
   } // NSGAII
+	  
+  private static EntityManagerFactory emf = Persistence
+				.createEntityManagerFactory("tesis");
+  private static EntityManager em = emf.createEntityManager();
+  private String casoPrincipal = "CasoCNunez_";
+  
+  public Poblacion population;
+  public Red NSFNET;
+  public EsquemaRestauracion esquema = EsquemaRestauracion.Link;
+  private CSVWriter csv = new CSVWriter();
 
   /**   
    * Runs the NSGA-II algorithm.
@@ -53,18 +83,19 @@ public class NSGAII extends Algorithm {
    * as a result of the algorithm execution
    * @throws JMException 
    */
-  public SolutionSet execute() throws JMException, ClassNotFoundException {
+  public Poblacion execute() throws JMException, ClassNotFoundException {
     int populationSize;
     int maxEvaluations;
     int evaluations;
-
+    
     QualityIndicator indicators; // QualityIndicator object
     int requiredEvaluations; // Use in the example of use of the
     // indicators object (see below)
 
-    SolutionSet population;
-    SolutionSet offspringPopulation;
-    SolutionSet union;
+    //Poblacion population;
+    //SolutionSet population;
+    Poblacion offspringPopulation;
+    Poblacion union;
 
     Operator mutationOperator;
     Operator crossoverOperator;
@@ -78,59 +109,86 @@ public class NSGAII extends Algorithm {
     indicators = (QualityIndicator) getInputParameter("indicators");
 
     //Initialize the variables
-    population = new SolutionSet(populationSize);
+    //population = new SolutionSet(populationSize);
     evaluations = 0;
+
+    
+    //Initialize Nsfnet
+	NSFNET = em.find(Red.class, 1); // NSFnet
+	NSFNET.inicializar();
+    
+    this.obtenerPoblacion(populationSize);
+	
 
     requiredEvaluations = 0;
 
     //Read the operators
     mutationOperator = operators_.get("mutation");
     crossoverOperator = operators_.get("crossover");
-    selectionOperator = operators_.get("selection");
+    //selectionOperator = operators_.get("selection");
+    OperadorSeleccion seleccionOp = new TorneoBinario();
 
     // Create the initial solutionSet
-    Solution newSolution;
+    /*Solution newSolution;
     for (int i = 0; i < populationSize; i++) {
       newSolution = new Solution(problem_);
       problem_.evaluate(newSolution);
       problem_.evaluateConstraints(newSolution);
       evaluations++;
       population.add(newSolution);
-    } //for       
+    } //for       */
 
     // Generations 
     while (evaluations < maxEvaluations) {
 
       // Create the offSpring solutionSet      
-      offspringPopulation = new SolutionSet(populationSize);
-      Solution[] parents = new Solution[2];
-      for (int i = 0; i < (populationSize / 2); i++) {
+      offspringPopulation = new Poblacion(populationSize);
+      Solution parents = new Solution();
+      
+      for (int i = 0; i < (populationSize); i++) {
         if (evaluations < maxEvaluations) {
           //obtain parents
-          parents[0] = (Solution) selectionOperator.execute(population);
-          parents[1] = (Solution) selectionOperator.execute(population);
-          Solution[] offSpring = (Solution[]) crossoverOperator.execute(parents);
-          mutationOperator.execute(offSpring[0]);
-          mutationOperator.execute(offSpring[1]);
-          problem_.evaluate(offSpring[0]);
-          problem_.evaluateConstraints(offSpring[0]);
-          problem_.evaluate(offSpring[1]);
-          problem_.evaluateConstraints(offSpring[1]);
-          offspringPopulation.add(offSpring[0]);
-          offspringPopulation.add(offSpring[1]);
-          evaluations += 2;
+          //parents[0] = (Solution) selectionOperator.execute(population);
+          //parents[1] = (Solution) selectionOperator.execute(population);
+          population.evaluar();	
+        	
+        	
+        	
+        	//Binary Tournament Application
+          //parents = (Solution) seleccionOp.seleccionar(population);
+          Collection<Individuo> selectos = seleccionOp.seleccionar(population);
+          
+          //Crossover
+          Solution offSpring = (Solution) population.cruzar(selectos);
+          
+          
+          //Solution[] offSpring = (Solution[]) crossoverOperator.execute(parents);
+          //mutationOperator.execute(offSpring[0]);
+          //mutationOperator.execute(offSpring[1]);
+          
+          problem_.evaluate(offSpring);
+          //problem_.evaluateConstraints(offSpring[0]);
+          //problem_.evaluate(offSpring[1]);
+          //problem_.evaluateConstraints(offSpring[1]);
+          
+          offspringPopulation.add(offSpring);
+          //offspringPopulation.add(offSpring[1]);
+          
+          csv.addValor(population.almacenarMejor(evaluations));
+          evaluations++;
         } // if                            
       } // for
 
       // Create the solutionSet union of solutionSet and offSpring
-      union = ((SolutionSet) population).union(offspringPopulation);
-
+     // union = ((SolutionSet) population).union(offspringPopulation);
+      
+      union = offspringPopulation;
       // Ranking the union
       Ranking ranking = new Ranking(union);
 
       int remain = populationSize;
       int index = 0;
-      SolutionSet front = null;
+      Poblacion front = null;
       population.clear();
 
       // Obtain the next front
@@ -169,13 +227,13 @@ public class NSGAII extends Algorithm {
       // of NSGA-II. In particular, it finds the number of evaluations required
       // by the algorithm to obtain a Pareto front with a hypervolume higher
       // than the hypervolume of the true Pareto front.
-      if ((indicators != null) &&
+      /*if ((indicators != null) &&
           (requiredEvaluations == 0)) {
         double HV = indicators.getHypervolume(population);
         if (HV >= (0.98 * indicators.getTrueParetoFrontHypervolume())) {
           requiredEvaluations = evaluations;
         } // if
-      } // if
+      } // if*/
     } // while
 
     // Return as output parameter the required evaluations
@@ -187,4 +245,47 @@ public class NSGAII extends Algorithm {
 
     return ranking.getSubfront(0);
   } // execute
+  /*
+	 * Funcion para obtener una cantidad de Individuos para la población
+	 * Inicial, cuya Solicitud es la unica seteada hasta el momento.
+	 */
+	private Set<Individuo> obtenerPrueba(int cantidad) {
+	
+		Set<Individuo> individuos = new HashSet<Individuo>(cantidad);
+		Caso prueba1 = em.find(Caso.class, casoPrincipal);
+		if (prueba1 != null){
+	
+			for (int i = 0; i < cantidad; i++) {
+				Solucion solucion = new Solucion(prueba1.getSolicitudes());
+		
+				individuos.add(solucion);
+			}
+		}else{
+			System.out.println("ERRORRRRR, prueba1 = null");
+		}
+		
+	
+		return individuos;
+	}//obtenerPrueba
+	
+	/*
+	 * Obtiene la población Inicial a partir de la Prueba cargada.
+	 */
+	private void obtenerPoblacion(int tamanho) {
+	
+		// 0. Obtener individuos Iniciales.
+		Set<Individuo> individuos = this.obtenerPrueba(tamanho);
+	
+		// 1. Se crea la Poblacion Inicial con los individuos iniciales.
+		population = new Poblacion(individuos);
+		// 2. Se carga la Red en la Poblacion.
+		Poblacion.setRed(NSFNET);
+		// 3. Se generan los caminos de la poblacion inicial.
+		population.generarPoblacion(esquema);
+		// 4. Se imprime la Poblacion Inicial
+		// System.out.println(p.toString());
+	}//obtenerPoblacion
+
+	
 } // NSGA-II
+
