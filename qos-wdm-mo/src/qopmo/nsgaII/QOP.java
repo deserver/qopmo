@@ -2,6 +2,7 @@ package qopmo.nsgaII;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import javax.persistence.CascadeType;
 import javax.persistence.ManyToMany;
@@ -64,6 +65,9 @@ public class QOP extends Problem {
 		
 		
 		solutionType_ = new RealSolutionType(this) ;
+		this.genes = new TreeSet<Servicio>();
+		this.fitness = Double.MAX_VALUE;
+		this.costo = Double.MAX_VALUE;
 	}
 
 	

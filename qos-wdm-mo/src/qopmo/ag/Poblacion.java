@@ -130,7 +130,7 @@ public class Poblacion {
 		return a;
 	}
 
-	public void setIndividuos(List<Individuo> individuos) {
+	public void setIndividuos(Collection<Individuo> individuos) {
 		this.individuos = individuos;
 	}
 
@@ -217,8 +217,12 @@ public class Poblacion {
 	 * 
 	 * @param selectos
 	 */
-	public Collection<Individuo> cruzar(Collection<Individuo> selectos) {
+	public Solution[] cruzar(Collection<Individuo> selectos) {
 
+		Solution[] solucion = new Solution[selectos.size()];
+		Poblacion solutionSet = new Poblacion(selectos.size());
+		//solutionSet.setIndividuos((List<Individuo>)selectos);
+		
 		if (selectos == null)
 			throw new Error("No hay selección.");
 
@@ -259,7 +263,14 @@ public class Poblacion {
 			this.hijos.add(hijo);
 		}
 		
-		return this.individuos;
+		solutionSet.setIndividuos(this.individuos);
+		
+		for (int i=0; i<solutionSet.size(); i++){
+			solucion[i] = solutionSet.get(i);
+		}
+		//solucion = solutionSet;
+		//return this.individuos;
+		return solucion;
 
 	}
 

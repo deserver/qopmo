@@ -63,8 +63,21 @@ public class NSGAII extends Algorithm {
    * Constructor
    * @param problem Problem to solve
    */
-  public NSGAII(Problem problem) {
+  public NSGAII(Problem problem, int x) {
     super (problem) ;
+	this.num = x;
+	if (this.num <= 10) {
+		this.caso = 40;
+	} else if (this.num <= 20) {
+		this.caso = 30;
+	} else if (this.num <= 30) {
+		this.caso = 20;
+	} else if (this.num <= 40) {
+		this.caso = 10;
+	} else {
+		this.caso = 1;
+	}
+	this.casoPrincipal += this.caso;
   } // NSGAII
 	  
   private static EntityManagerFactory emf = Persistence
@@ -76,6 +89,8 @@ public class NSGAII extends Algorithm {
   public Red NSFNET;
   public EsquemaRestauracion esquema = EsquemaRestauracion.Link;
   private CSVWriter csv = new CSVWriter();
+  private final Integer caso;
+  private final Integer num;
 
   /**   
    * Runs the NSGA-II algorithm.
@@ -123,8 +138,8 @@ public class NSGAII extends Algorithm {
     requiredEvaluations = 0;
 
     //Read the operators
-    mutationOperator = operators_.get("mutation");
-    crossoverOperator = operators_.get("crossover");
+    //mutationOperator = operators_.get("mutation");
+    //crossoverOperator = operators_.get("crossover");
     //selectionOperator = operators_.get("selection");
     OperadorSeleccion seleccionOp = new TorneoBinario();
 
@@ -139,14 +154,14 @@ public class NSGAII extends Algorithm {
     } //for       */
 
     // Generations 
-    while (evaluations < maxEvaluations) {
+    while (evaluations < 50) {
 
       // Create the offSpring solutionSet      
-      offspringPopulation = new Poblacion(populationSize);
+      offspringPopulation = new Poblacion(2500);
       Solution parents = new Solution();
       
       for (int i = 0; i < (populationSize); i++) {
-        if (evaluations < maxEvaluations) {
+        if (evaluations < 50) {
           //obtain parents
           //parents[0] = (Solution) selectionOperator.execute(population);
           //parents[1] = (Solution) selectionOperator.execute(population);
@@ -159,23 +174,27 @@ public class NSGAII extends Algorithm {
           Collection<Individuo> selectos = seleccionOp.seleccionar(population);
           
           //Crossover
-          Solution offSpring = (Solution) population.cruzar(selectos);
+          Solution[] offSpring = population.cruzar(selectos);
           
           
           //Solution[] offSpring = (Solution[]) crossoverOperator.execute(parents);
           //mutationOperator.execute(offSpring[0]);
           //mutationOperator.execute(offSpring[1]);
           
-          problem_.evaluate(offSpring);
-          //problem_.evaluateConstraints(offSpring[0]);
-          //problem_.evaluate(offSpring[1]);
-          //problem_.evaluateConstraints(offSpring[1]);
+          for (int j=0; j <offSpring.length; j++){
+	          
+	          problem_.evaluate(offSpring[j]);
+	          //problem_.evaluateConstraints(offSpring[0]);
+	          //problem_.evaluate(offSpring[1]);
+	          //problem_.evaluateConstraints(offSpring[1]);
+	          
+	          offspringPopulation.add(offSpring[j]);
+	          //offspringPopulation.add(offSpring[1]);
+          }
           
-          offspringPopulation.add(offSpring);
-          //offspringPopulation.add(offSpring[1]);
-          
-          csv.addValor(population.almacenarMejor(evaluations));
+          //csv.addValor(population.almacenarMejor(evaluations));
           evaluations++;
+          System.out.println(evaluations);
         } // if                            
       } // for
 
@@ -253,17 +272,13 @@ public class NSGAII extends Algorithm {
 	
 		Set<Individuo> individuos = new HashSet<Individuo>(cantidad);
 		Caso prueba1 = em.find(Caso.class, casoPrincipal);
-		if (prueba1 != null){
 	
-			for (int i = 0; i < cantidad; i++) {
-				Solucion solucion = new Solucion(prueba1.getSolicitudes());
-		
-				individuos.add(solucion);
-			}
-		}else{
-			System.out.println("ERRORRRRR, prueba1 = null");
+		for (int i = 0; i < cantidad; i++) {
+			Solucion solucion = new Solucion(prueba1.getSolicitudes());
+	
+			individuos.add(solucion);
 		}
-		
+
 	
 		return individuos;
 	}//obtenerPrueba
