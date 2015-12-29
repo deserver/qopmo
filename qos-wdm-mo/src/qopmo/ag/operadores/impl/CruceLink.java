@@ -1,6 +1,7 @@
 package qopmo.ag.operadores.impl;
 
 import java.util.ArrayList;
+import jmetal.core.Solution;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
