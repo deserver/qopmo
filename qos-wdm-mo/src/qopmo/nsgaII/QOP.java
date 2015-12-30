@@ -25,27 +25,7 @@ import qopmo.wdm.qop.Nivel;
 import qopmo.wdm.qop.Servicio;
 
 public class QOP extends Problem {
-	private int contadorFailOroPrimario = 0;
-	private int contadorFailPlataPrimario = 0;
-	private int contadorFailBroncePrimario = 0;
-	private int contadorFailOroAlternativo = 0;
-	private int contadorFailPlataAlternativo = 0;
-	private Set<Enlace> enlacesContado;
 	
-	//Genes de la solución (Conjunto de Servicios)
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Set<Servicio> genes;
-	
-	// Fitness de la Solución
-	private double fitness;
-
-	// Costo de la Solución
-	private double costo;
-	
-	// Valor por kilometro.
-	public static double a = 0.1;
-	// Valor por cambio de longitud de onda
-	public static double b = 2;
 	
 	/*
 	 * Obtiene el costo total de los canales utilizados en la solución.
@@ -54,36 +34,31 @@ public class QOP extends Problem {
 	 */
 	public int contadorCosto;
 	public int cambiosLDO;
-	
+	//Valor por kilometro.
+	public static double a = 0.1;
+	//Valor por cambio de longitud de onda
+	public static double b = 2;
 	
 	
 	public QOP (){
 		numberOfVariables_= 1;
-		numberOfObjectives_ = 4;
+		numberOfObjectives_ = 1;
 		numberOfConstraints_ = 0; 
 		problemName_ = "qop_wdm";
 		
 		
 		solutionType_ = new RealSolutionType(this) ;
-		this.genes = new TreeSet<Servicio>();
-		this.fitness = Double.MAX_VALUE;
-		this.costo = Double.MAX_VALUE;
 	}
 
 	
 	@Override
 	public void evaluate(Solution solution) throws JMException {
-		this.contadorFailOroPrimario = 0;
-		this.contadorFailOroAlternativo = 0;
-		this.contadorFailPlataPrimario = 0;
-		this.contadorFailPlataAlternativo = 0;
-		this.contadorFailBroncePrimario = 0;
-		
 
 		// Costo de una Solucion
-		this.costo = this.costoTotalCanales2();
+		solution.costo = this.costoTotalCanales2(solution);
 		// Fitness de la Solución
-		this.fitness = 1 / this.costo;
+		solution.fitness_ = 1 / solution.costo;
+		solution.setObjective(0, solution.fitness_);
 
 		//return this.fitness;
 	}
@@ -93,26 +68,26 @@ public class QOP extends Problem {
 	 * 
 	 * @return
 	 */
-	private double costoTotalCanales2() {
+	private double costoTotalCanales2(Solution solution) {
 		contadorCosto = 0;
 		cambiosLDO = 0;
-		enlacesContado = new HashSet<Enlace>();
+		solution.enlacesContado = new HashSet<Enlace>();
 		/*
 		 * El cálculo de las variables del costo se suman para cada gen
 		 * (Servicio) del individuo (Solucion).
 		 */
-		for (Servicio gen : this.genes) {
+		for (Servicio gen : solution.genes) {
 
 			if (gen == null)
 				continue;
 
 			// Se cuenta cada Oro que no tiene un alternativo.
 			if (!gen.oroTieneAlternativo())
-				this.contadorFailOroAlternativo++;
+				solution.contadorFailOroAlternativo++;
 
 			// Se cuenta cada Plata que no tiene un alternativo.
 			if (!gen.plataTieneAlternativo())
-				this.contadorFailPlataAlternativo++;
+				solution.contadorFailPlataAlternativo++;
 
 			/*
 			 * Evaluacion Primario: Si no tiene primario se cuenta como Error.
@@ -124,15 +99,15 @@ public class QOP extends Problem {
 
 			if (primario == null) {
 				if (gen.getSolicitud().getNivel() == Nivel.Oro)
-					this.contadorFailOroPrimario++;
+					solution.contadorFailOroPrimario++;
 				else if (gen.getSolicitud().getNivel() == Nivel.Plata1)
-					this.contadorFailPlataPrimario++;
+					solution.contadorFailPlataPrimario++;
 				else if (gen.getSolicitud().getNivel() == Nivel.Bronce)
-					this.contadorFailBroncePrimario++;
+					solution.contadorFailBroncePrimario++;
 			} else {
 				// Se cuentan y suman los enlaces y cambios de longitud de onda
 				// del primario.
-				contadorInterno(primario.getEnlaces());
+				contadorInterno(primario.getEnlaces(), solution);
 			}
 
 			/*
@@ -143,13 +118,13 @@ public class QOP extends Problem {
 			if (gen.getSolicitud().getEsquema() != EsquemaRestauracion.Link) {
 				Camino alternativo = gen.getAlternativo();
 				if (alternativo != null) {
-					contadorInterno(alternativo.getEnlaces());
+					contadorInterno(alternativo.getEnlaces(), solution);
 				}
 			} else {
 				if (gen.getAlternativoLink() != null) {
 					for (Camino alternativo : gen.getAlternativoLink()) {
 						if (alternativo != null) {
-							contadorInterno(alternativo.getEnlaces());
+							contadorInterno(alternativo.getEnlaces(), solution);
 						}
 					}
 				}
@@ -166,7 +141,7 @@ public class QOP extends Problem {
 	 * enlaces obtenidos como parámetro. Se suman a los atributos locales
 	 * contadorCosto y cambiosLDO.
 	 */
-	private void contadorInterno(Set<Enlace> enlaces) {
+	private void contadorInterno(Set<Enlace> enlaces, Solution solution) {
 		// Si se utiliza el auxiliar debe definirse como variable global.
 		// Set<CanalOptico> auxiliar = new HashSet<CanalOptico>();
 		
@@ -199,8 +174,8 @@ public class QOP extends Problem {
 			// boolean inserto = auxiliar.add(ca);
 			// se suman costos de Canales Opticos utilizados.
 			// if (inserto)
-			if (!enlacesContado.contains(s)) {
-				enlacesContado.add(s);
+			if (!solution.enlacesContado.contains(s)) {
+				solution.enlacesContado.add(s);
 				contadorCosto += ca.getCosto();
 			}
 		}

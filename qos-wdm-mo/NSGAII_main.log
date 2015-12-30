@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
+<record>
+  <date>2015-12-29T22:38:41</date>
+  <millis>1451439521708</millis>
+  <sequence>0</sequence>
+  <logger>jMetal</logger>
+  <level>INFO</level>
+  <class>qopmo.nsgaII.NSGAII_main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Total execution time: 989ms</message>
+</record>
+<record>
+  <date>2015-12-29T22:38:41</date>
+  <millis>1451439521713</millis>
+  <sequence>1</sequence>
+  <logger>jMetal</logger>
+  <level>INFO</level>
+  <class>qopmo.nsgaII.NSGAII_main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Variables values have been writen to file VAR</message>
+</record>
 </log>

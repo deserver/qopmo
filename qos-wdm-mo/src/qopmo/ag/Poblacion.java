@@ -57,7 +57,7 @@ public class Poblacion {
 	 */
 	private OperadorSeleccion operadorSeleccion;
 
-	private Solucion mejor;
+	public Solution mejor;
 
 	private EsquemaRestauracion esquema;
 	
@@ -72,15 +72,15 @@ public class Poblacion {
 	 * 
 	 * @param individuos
 	 */
-	public Poblacion(Collection<Individuo> individuos) {
+	public Poblacion(Collection<Individuo> individuos, int capacity) {
 		this.individuos = individuos;
 		this.operadorSeleccion = new TorneoBinario();
 		this.operadorCruce = new CrucePath();
 		this.hijos = new ArrayList<Individuo>();
-		this.mejor = new Solucion();
+		this.mejor = new Solution();
 		this.mejor.setFitness(0);
 		this.solutionsList = new ArrayList<Solution>();
-		this.capacity = 100;
+		this.capacity = capacity;
 
 	}
 	
@@ -97,11 +97,11 @@ public class Poblacion {
 		Poblacion.red = red;
 	}
 
-	public Solucion getMejor() {
+	public Solution getMejor() {
 		return mejor;
 	}
 
-	public void setMejor(Solucion mejor) {
+	public void setMejor(Solution mejor) {
 		this.mejor = mejor;
 	}
 
@@ -136,6 +136,14 @@ public class Poblacion {
 
 	public Collection<Individuo> getHijos() {
 		return hijos;
+	}
+	
+	public void cargarSolutionList(Collection<Individuo> individuos){
+		Solution newSolution;
+		for (int i=0; i<individuos.size(); i++){
+			newSolution = new Solution();
+			this.solutionsList.add(newSolution);
+		}
 	}
 
 	public void setHijos(List<Individuo> hijos) {
@@ -180,7 +188,7 @@ public class Poblacion {
 
 		int ind1 = 1;
 		for (Individuo i : this.individuos) {
-			Solucion s = (Solucion) i;
+			Solution s = (Solution) i;
 			Poblacion.red.inicializar();
 			if (esquema == EsquemaRestauracion.Segment) {
 				if (ind1 > 2) {
@@ -231,12 +239,13 @@ public class Poblacion {
 
 		// Auxiliar de Individuos
 		List<Individuo> individuos = new ArrayList<Individuo>(selectos);
+		Collection<Individuo> hijosNuevos = new ArrayList<Individuo>();
 
 		// Se inicializa la clase Random
 		Random rand = new Random();
 		rand.nextInt();
 
-		for (int i = 1; i < cantMejores; i++) {
+		for (int i = 0; i < cantMejores; i++) {
 
 			// Se eligen a dos individuos (torneo "binario")
 			int ind1 = rand.nextInt(cantMejores);
@@ -258,16 +267,21 @@ public class Poblacion {
 			// Se extrae los fitness de los correspondientes individuos
 
 			red.inicializar();
-			hijo = this.operadorCruce.cruzar(individuo1, individuo2);
+			hijo = (Solution) this.operadorCruce.cruzar(individuo1, individuo2);
 
+			//if (this.hijos.size()<cantMejores)
+			//hijosNuevos.add(hijo);
+			solucion[i] = (Solution) hijo;
 			this.hijos.add(hijo);
 		}
 		
-		solutionSet.setIndividuos(this.individuos);
+		//solutionSet.setIndividuos(hijosNuevos);
+		//solutionSet.cargarSolutionList(hijosNuevos);
 		
-		for (int i=0; i<solutionSet.size(); i++){
+		/*for (int i=0; i<hijosNuevos.size(); i++){
 			solucion[i] = solutionSet.get(i);
-		}
+			solucion.add
+		}*/
 		//solucion = solutionSet;
 		//return this.individuos;
 		return solucion;
@@ -283,11 +297,11 @@ public class Poblacion {
 		for (Individuo i : this.individuos) {
 			i.evaluar();
 			if (primero) {
-				this.mejor = (Solucion) i;
+				this.mejor = (Solution) i;
 				primero = false;
 			} else {
 				if (this.mejor.comparar(i))
-					this.mejor = (Solucion) i;
+					this.mejor = (Solution) i;
 			}
 		}
 	}
@@ -543,7 +557,8 @@ public class Poblacion {
 	       BufferedWriter bw      = new BufferedWriter(osw)        ;            
 
 	       if (size()>0) {
-	         int numberOfVariables = solutionsList.get(0).getDecisionVariables().length ;
+	    	 //int numberOfVariables = solutionsList.get(0).getDecisionVariables().length ;
+	         int numberOfVariables = solutionsList.size();
 	         for (Solution aSolutionsList_ : solutionsList) {
 	           for (int j = 0; j < numberOfVariables; j++)
 	             bw.write(aSolutionsList_.getDecisionVariables()[j].toString() + " ");

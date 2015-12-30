@@ -1,6 +1,7 @@
 package qopmo.ag.operadores;
 
 import qopmo.ag.Individuo;
+import jmetal.core.Solution;
 
 /**
  * Interfaz OperadorCruce que define la implementación de una operación de

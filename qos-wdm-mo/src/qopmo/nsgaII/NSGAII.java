@@ -23,6 +23,7 @@ package qopmo.nsgaII;
 
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -144,28 +145,30 @@ public class NSGAII extends Algorithm {
     OperadorSeleccion seleccionOp = new TorneoBinario();
 
     // Create the initial solutionSet
-    /*Solution newSolution;
+    Solution newSolution;
+    //population = new Poblacion(populationSize);
     for (int i = 0; i < populationSize; i++) {
       newSolution = new Solution(problem_);
       problem_.evaluate(newSolution);
       problem_.evaluateConstraints(newSolution);
       evaluations++;
       population.add(newSolution);
-    } //for       */
+    } //for       
 
+    evaluations = 0;
     // Generations 
-    while (evaluations < 50) {
+    while (evaluations < maxEvaluations) {
 
       // Create the offSpring solutionSet      
-      offspringPopulation = new Poblacion(2500);
+      offspringPopulation = new Poblacion(populationSize*populationSize);
       Solution parents = new Solution();
       
       for (int i = 0; i < (populationSize); i++) {
-        if (evaluations < 50) {
+        if (evaluations < maxEvaluations) {
           //obtain parents
           //parents[0] = (Solution) selectionOperator.execute(population);
           //parents[1] = (Solution) selectionOperator.execute(population);
-          population.evaluar();	
+          //population.evaluar();	
         	
         	
         	
@@ -174,7 +177,9 @@ public class NSGAII extends Algorithm {
           Collection<Individuo> selectos = seleccionOp.seleccionar(population);
           
           //Crossover
-          Solution[] offSpring = population.cruzar(selectos);
+          Solution[]  offSpring = population.cruzar(selectos);
+        		  
+        		 
           
           
           //Solution[] offSpring = (Solution[]) crossoverOperator.execute(parents);
@@ -182,6 +187,7 @@ public class NSGAII extends Algorithm {
           //mutationOperator.execute(offSpring[1]);
           
           for (int j=0; j <offSpring.length; j++){
+        	  //offSpring[j] = new Solution(1);
 	          
 	          problem_.evaluate(offSpring[j]);
 	          //problem_.evaluateConstraints(offSpring[0]);
@@ -190,6 +196,14 @@ public class NSGAII extends Algorithm {
 	          
 	          offspringPopulation.add(offSpring[j]);
 	          //offspringPopulation.add(offSpring[1]);
+	          /*boolean primero = true;
+	          if (primero) {
+					population.mejor = (Solucion) offspringPopulation.getMejor();
+					primero = false;
+				} else {
+					if (population.mejor.comparar(offspringPopulation.getMejor()))
+						population.mejor = (Solucion) offspringPopulation.getMejor();
+				}*/
           }
           
           //csv.addValor(population.almacenarMejor(evaluations));
@@ -262,7 +276,13 @@ public class NSGAII extends Algorithm {
     Ranking ranking = new Ranking(population);
     ranking.getSubfront(0).printFeasibleFUN("FUN_NSGAII") ;
 
-    return ranking.getSubfront(0);
+    
+    
+    
+	
+	return ranking.getSubfront(0);
+
+	
   } // execute
   /*
 	 * Funcion para obtener una cantidad de Individuos para la población
@@ -274,8 +294,8 @@ public class NSGAII extends Algorithm {
 		Caso prueba1 = em.find(Caso.class, casoPrincipal);
 	
 		for (int i = 0; i < cantidad; i++) {
-			Solucion solucion = new Solucion(prueba1.getSolicitudes());
-	
+			Solution solucion = new Solution(prueba1.getSolicitudes());
+			
 			individuos.add(solucion);
 		}
 
@@ -292,7 +312,7 @@ public class NSGAII extends Algorithm {
 		Set<Individuo> individuos = this.obtenerPrueba(tamanho);
 	
 		// 1. Se crea la Poblacion Inicial con los individuos iniciales.
-		population = new Poblacion(individuos);
+		population = new Poblacion(individuos, tamanho);
 		// 2. Se carga la Red en la Poblacion.
 		Poblacion.setRed(NSFNET);
 		// 3. Se generan los caminos de la poblacion inicial.
@@ -300,6 +320,16 @@ public class NSGAII extends Algorithm {
 		// 4. Se imprime la Poblacion Inicial
 		// System.out.println(p.toString());
 	}//obtenerPoblacion
+
+	 // Create the initial solutionSet
+    /*Solution newSolution;
+    for (int i = 0; i < populationSize; i++) {
+      newSolution = new Solution(problem_);
+      problem_.evaluate(newSolution);
+      problem_.evaluateConstraints(newSolution);
+      evaluations++;
+      population.add(newSolution);
+    } //for       */
 
 	
 } // NSGA-II

@@ -33,7 +33,7 @@ import qopmo.wdm.qop.Solicitud;
  */
 @Entity
 @Table(name = "Solucion")
-public class Solucion implements Individuo {
+public class Solucion  {
 
 	@Id
 	@GeneratedValue
@@ -218,7 +218,7 @@ public class Solucion implements Individuo {
 	 * Costo = suma_de_distancia x a + suma_de_cambios_LDO x b
 	 * </p>
 	 */
-	@Override
+	@Deprecated
 	public double evaluar() {
 
 		this.contadorFailOroPrimario = 0;

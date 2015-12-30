@@ -121,8 +121,8 @@ public class NSGAII_main {
     //algorithm = new ssNSGAII(problem);
 
     // Algorithm parameters
-    algorithm.setInputParameter("populationSize",50);
-    algorithm.setInputParameter("maxEvaluations",50);
+    algorithm.setInputParameter("populationSize",5);
+    algorithm.setInputParameter("maxEvaluations",5);
 
     // Mutation and Crossover for Real codification 
     /*parameters = new HashMap() ;
@@ -154,13 +154,14 @@ public class NSGAII_main {
     Poblacion population = algorithm.execute();
     long estimatedTime = System.currentTimeMillis() - initTime;
     
+    System.out.println("FIN Prueba Algoritmo Genetico. (Link-Oriented)");
     // Result messages 
     logger_.info("Total execution time: "+estimatedTime + "ms");
     logger_.info("Variables values have been writen to file VAR");
     population.printVariablesToFile("VAR");    
     logger_.info("Objectives values have been writen to file FUN");
     population.printObjectivesToFile("FUN");
-  
+  	
     /*if (indicators != null) {
       logger_.info("Quality indicators") ;
       logger_.info("Hypervolume: " + indicators.getHypervolume(population)) ;
