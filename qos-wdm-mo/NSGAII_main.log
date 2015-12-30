@@ -2,19 +2,19 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2015-12-29T22:38:41</date>
-  <millis>1451439521708</millis>
+  <date>2015-12-30T08:52:59</date>
+  <millis>1451476379872</millis>
   <sequence>0</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 989ms</message>
+  <message>Total execution time: 768ms</message>
 </record>
 <record>
-  <date>2015-12-29T22:38:41</date>
-  <millis>1451439521713</millis>
+  <date>2015-12-30T08:52:59</date>
+  <millis>1451476379876</millis>
   <sequence>1</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -22,5 +22,16 @@
   <method>main</method>
   <thread>1</thread>
   <message>Variables values have been writen to file VAR</message>
+</record>
+<record>
+  <date>2015-12-30T08:52:59</date>
+  <millis>1451476379958</millis>
+  <sequence>2</sequence>
+  <logger>jMetal</logger>
+  <level>INFO</level>
+  <class>qopmo.nsgaII.NSGAII_main</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Objectives values have been writen to file FUN</message>
 </record>
 </log>

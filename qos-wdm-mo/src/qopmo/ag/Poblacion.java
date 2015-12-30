@@ -560,8 +560,12 @@ public class Poblacion {
 	    	 //int numberOfVariables = solutionsList.get(0).getDecisionVariables().length ;
 	         int numberOfVariables = solutionsList.size();
 	         for (Solution aSolutionsList_ : solutionsList) {
-	           for (int j = 0; j < numberOfVariables; j++)
-	             bw.write(aSolutionsList_.getDecisionVariables()[j].toString() + " ");
+	           for (int j = 0; j < numberOfVariables; j++){
+	             //bw.write(aSolutionsList_.getDecisionVariables()[j].toString() + " ");
+	           	 bw.write(aSolutionsList_.toString());
+	           	 System.out.println(aSolutionsList_.toString());
+	           }
+	             
 	           bw.newLine();
 	         }
 	       }

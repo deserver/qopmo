@@ -32,6 +32,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.junit.Test;
+
 import jmetal.core.*;
 import jmetal.qualityIndicator.QualityIndicator;
 import jmetal.util.Distance;
@@ -99,6 +101,7 @@ public class NSGAII extends Algorithm {
    * as a result of the algorithm execution
    * @throws JMException 
    */
+  @Test
   public Poblacion execute() throws JMException, ClassNotFoundException {
     int populationSize;
     int maxEvaluations;
