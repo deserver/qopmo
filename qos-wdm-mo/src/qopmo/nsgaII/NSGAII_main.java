@@ -81,7 +81,7 @@ public class NSGAII_main {
                                   SecurityException, 
                                   IOException, 
                                   ClassNotFoundException {
-	  for (int l=0; l<10; l++){
+	  
 	    Problem   problem   ; // The problem to solve
 	    Algorithm algorithm ; // The algorithm to use
 	    Operator  crossover ; // Crossover operator
@@ -117,63 +117,85 @@ public class NSGAII_main {
 	      //problem = new OKA2("Real") ;
 	      problem = new QOP();
 	    } // else
-	    
-	    algorithm = new NSGAII(problem, 40);
-	    //algorithm = new ssNSGAII(problem);
-	
-	    // Algorithm parameters
-	    algorithm.setInputParameter("populationSize",50);
-	    algorithm.setInputParameter("maxEvaluations",50);
-	
-	    // Mutation and Crossover for Real codification 
-	    /*parameters = new HashMap() ;
-	    parameters.put("probability", 0.9) ;
-	    parameters.put("distributionIndex", 20.0) ;
-	    crossover = CrossoverFactory.getCrossoverOperator("SBXCrossover", parameters);                   
-	
-	    parameters = new HashMap() ;
-	    parameters.put("probability", 1.0/problem.getNumberOfVariables()) ;
-	    parameters.put("distributionIndex", 20.0) ;
-	    mutation = MutationFactory.getMutationOperator("PolynomialMutation", parameters);                    
-	
-	    // Selection Operator 
-	    parameters = null ;
-	    selection = SelectionFactory.getSelectionOperator("BinaryTournament2", parameters) ;  
-	    */
-	    
-	    // Add the operators to the algorithm
-	    /*algorithm.addOperator("crossover",crossover);
-	    algorithm.addOperator("mutation",mutation);
-	    algorithm.addOperator("selection",selection);*/
-	    //algorithm.addOperator("torneobinario", torneobinario);
-	
-	    // Add the indicator object to the algorithm
-	    algorithm.setInputParameter("indicators", indicators) ;
-	    
-	    // Execute the Algorithm
-	    long initTime = System.currentTimeMillis();
-	    Poblacion population = algorithm.execute();
-	    long estimatedTime = System.currentTimeMillis() - initTime;
-	    
-	    System.out.println("FIN Prueba Algoritmo Genetico. (Link-Oriented)");
-	    // Result messages 
-	    logger_.info("Total execution time: "+estimatedTime + "ms");
-	    logger_.info("Variables values have been writen to file VAR");
-	    population.printVariablesToFile("VAR");    
-	    logger_.info("Objectives values have been writen to file FUN");
-	    population.printObjectivesToFile("FUN");
-	  	
-	    /*if (indicators != null) {
-	      logger_.info("Quality indicators") ;
-	      logger_.info("Hypervolume: " + indicators.getHypervolume(population)) ;
-	      logger_.info("GD         : " + indicators.getGD(population)) ;
-	      logger_.info("IGD        : " + indicators.getIGD(population)) ;
-	      logger_.info("Spread     : " + indicators.getSpread(population)) ;
-	      logger_.info("Epsilon    : " + indicators.getEpsilon(population)) ;  
-	     
-	      int evaluations = ((Integer)algorithm.getOutputParameter("evaluations")).intValue();
-	      logger_.info("Speed      : " + evaluations + " evaluations") ;      
-	    } // if*/
-	  }//for
+	    int corridas, caso;
+	    corridas =0;
+	    while(corridas < 40){
+		    algorithm = new NSGAII(problem, corridas);
+		    caso = getCaso(corridas);
+		    //algorithm = new ssNSGAII(problem);
+		
+		    // Algorithm parameters
+		    algorithm.setInputParameter("populationSize",50);
+		    algorithm.setInputParameter("maxEvaluations",50);
+		
+		    // Mutation and Crossover for Real codification 
+		    /*parameters = new HashMap() ;
+		    parameters.put("probability", 0.9) ;
+		    parameters.put("distributionIndex", 20.0) ;
+		    crossover = CrossoverFactory.getCrossoverOperator("SBXCrossover", parameters);                   
+		
+		    parameters = new HashMap() ;
+		    parameters.put("probability", 1.0/problem.getNumberOfVariables()) ;
+		    parameters.put("distributionIndex", 20.0) ;
+		    mutation = MutationFactory.getMutationOperator("PolynomialMutation", parameters);                    
+		
+		    // Selection Operator 
+		    parameters = null ;
+		    selection = SelectionFactory.getSelectionOperator("BinaryTournament2", parameters) ;  
+		    */
+		    
+		    // Add the operators to the algorithm
+		    /*algorithm.addOperator("crossover",crossover);
+		    algorithm.addOperator("mutation",mutation);
+		    algorithm.addOperator("selection",selection);*/
+		    //algorithm.addOperator("torneobinario", torneobinario);
+		
+		    // Add the indicator object to the algorithm
+		    algorithm.setInputParameter("indicators", indicators) ;
+		    
+		    System.out.println("Corrida: "+corridas);
+		    // Execute the Algorithm
+		    long initTime = System.currentTimeMillis();
+		    Poblacion population = algorithm.execute();
+		    long estimatedTime = System.currentTimeMillis() - initTime;
+		    
+		    System.out.println("FIN Prueba Algoritmo Genetico. (Link-Oriented)");
+		    // Result messages 
+		    logger_.info("Total execution time: "+estimatedTime + "ms");
+		    logger_.info("Variables values have been writen to file VAR");
+		    population.printVariablesToFile("VAR_"+caso);    
+		    logger_.info("Objectives values have been writen to file FUN");
+		    population.printObjectivesToFile("FUN_"+caso);
+		  	
+		    /*if (indicators != null) {
+		      logger_.info("Quality indicators") ;
+		      logger_.info("Hypervolume: " + indicators.getHypervolume(population)) ;
+		      logger_.info("GD         : " + indicators.getGD(population)) ;
+		      logger_.info("IGD        : " + indicators.getIGD(population)) ;
+		      logger_.info("Spread     : " + indicators.getSpread(population)) ;
+		      logger_.info("Epsilon    : " + indicators.getEpsilon(population)) ;  
+		     
+		      int evaluations = ((Integer)algorithm.getOutputParameter("evaluations")).intValue();
+		      logger_.info("Speed      : " + evaluations + " evaluations") ;      
+		    } // if*/
+		    corridas++;
+	  }
+	  
   } //main
+  
+  public static int getCaso(int x){
+		int num = x, caso;
+		if (num <= 10) {
+			caso = 40;
+		} else if (num <= 20) {
+			caso = 30;
+		} else if (num <= 30) {
+			caso = 20;
+		} else if (num <= 40) {
+			caso = 10;
+		} else {
+			caso = 1;
+		}
+		return caso;
+  }
 } // NSGAII_main

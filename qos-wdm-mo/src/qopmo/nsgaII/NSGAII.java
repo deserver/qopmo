@@ -92,7 +92,7 @@ public class NSGAII extends Algorithm {
   public Red NSFNET;
   public EsquemaRestauracion esquema = EsquemaRestauracion.Link;
   private CSVWriter csv = new CSVWriter();
-  private final Integer caso;
+  public Integer caso;
   private final Integer num;
   
   Problem   problem   ; // The problem to solve
@@ -165,133 +165,133 @@ public class NSGAII extends Algorithm {
     evaluations = 0;
     int cantIt = 0;
     // Generations 
-    while (cantIt<40){
-	    while (evaluations < maxEvaluations) {
-	
-	      // Create the offSpring solutionSet      
-	      offspringPopulation = new Poblacion(populationSize*populationSize);
-	      Solution parents = new Solution();
-	      
-	      for (int i = 0; i < (populationSize); i++) {
-	        if (evaluations < maxEvaluations) {
-	          //obtain parents
-	          //parents[0] = (Solution) selectionOperator.execute(population);
-	          //parents[1] = (Solution) selectionOperator.execute(population);
-	          //population.evaluar();	
-	        	
-	        	
-	        	
-	        	//Binary Tournament Application
-	          //parents = (Solution) seleccionOp.seleccionar(population);
-	          Collection<Individuo> selectos = seleccionOp.seleccionar(population);
-	          
-	          //Crossover
-	          Solution[]  offSpring = population.cruzar(selectos);
-	        		  
-	        		 
-	          
-	          
-	          //Solution[] offSpring = (Solution[]) crossoverOperator.execute(parents);
-	          //mutationOperator.execute(offSpring[0]);
-	          //mutationOperator.execute(offSpring[1]);
-	          
-	          for (int j=0; j <populationSize; j++){
-	        	  //offSpring[j] = new Solution(1);
-		          
-		          problem_.evaluate(offSpring[j]);
-		          //problem_.evaluateConstraints(offSpring[0]);
-		          //problem_.evaluate(offSpring[1]);
-		          //problem_.evaluateConstraints(offSpring[1]);
-		          
-		          offspringPopulation.add(offSpring[j]);
-		          //offspringPopulation.add(offSpring[1]);
-		          /*boolean primero = true;
-		          if (primero) {
-						population.mejor = (Solucion) offspringPopulation.getMejor();
-						primero = false;
-					} else {
-						if (population.mejor.comparar(offspringPopulation.getMejor()))
-							population.mejor = (Solucion) offspringPopulation.getMejor();
-					}*/
-	          }
-	          
-	          //csv.addValor(population.almacenarMejor(evaluations));
-	          evaluations++;
-	          population.siguienteGeneracion();
-	          System.out.println(evaluations);
-	        } // if                            
-	      } // for
-	
-	      // Create the solutionSet union of solutionSet and offSpring
-	     // union = ((SolutionSet) population).union(offspringPopulation);
-	      
-	      union = offspringPopulation;
-	      // Ranking the union
-	      ranking = new Ranking(union);
-	
-	      int remain = populationSize;
-	      int index = 0;
-	      Poblacion front = null;
-	      population.clear();
-	
-	      // Obtain the next front
-	      front = ranking.getSubfront(index);
-	
-	      while ((remain > 0) && (remain >= front.size())) {
-	        //Assign crowding distance to individuals
-	        distance.crowdingDistanceAssignment(front, problem_.getNumberOfObjectives());
-	        //Add the individuals of this front
-	        for (int k = 0; k < front.size(); k++) {
-	          population.add(front.get(k));
-	        } // for
-	
-	        //Decrement remain
-	        remain = remain - front.size();
-	
-	        //Obtain the next front
-	        index++;
-	        if (remain > 0) {
-	          front = ranking.getSubfront(index);
-	        } // if        
-	      } // while
-	
-	      // Remain is less than front(index).size, insert only the best one
-	      if (remain > 0) {  // front contains individuals to insert                        
-	        distance.crowdingDistanceAssignment(front, problem_.getNumberOfObjectives());
-	        front.sort(new CrowdingComparator());
-	        for (int k = 0; k < remain; k++) {
-	          population.add(front.get(k));
-	        } // for
-	
-	        remain = 0;
-	      } // if                               
-	
-	      // This piece of code shows how to use the indicator object into the code
-	      // of NSGA-II. In particular, it finds the number of evaluations required
-	      // by the algorithm to obtain a Pareto front with a hypervolume higher
-	      // than the hypervolume of the true Pareto front.
-	      /*if ((indicators != null) &&
-	          (requiredEvaluations == 0)) {
-	        double HV = indicators.getHypervolume(population);
-	        if (HV >= (0.98 * indicators.getTrueParetoFrontHypervolume())) {
-	          requiredEvaluations = evaluations;
-	        } // if
-	      } // if*/
-	    } // while
-	    cantIt++;
-	    
-	
-	    // Return as output parameter the required evaluations
-	    setOutputParameter("evaluations", requiredEvaluations);
-	
-	    // Return the first non-dominated front
-	    ranking = new Ranking(population);
-	    ranking.getSubfront(0).printFeasibleFUN("FUN_NSGAII") ;
-	
-	    
-	    
     
-    }//while
+    while (evaluations < maxEvaluations) {
+
+      // Create the offSpring solutionSet      
+      offspringPopulation = new Poblacion(populationSize*populationSize);
+      Solution parents = new Solution();
+      
+      for (int i = 0; i < (populationSize); i++) {
+        if (evaluations < maxEvaluations) {
+          //obtain parents
+          //parents[0] = (Solution) selectionOperator.execute(population);
+          //parents[1] = (Solution) selectionOperator.execute(population);
+          //population.evaluar();	
+        	
+        	
+        	
+        	//Binary Tournament Application
+          //parents = (Solution) seleccionOp.seleccionar(population);
+          Collection<Individuo> selectos = seleccionOp.seleccionar(population);
+          
+          //Crossover
+          Solution[]  offSpring = population.cruzar(selectos);
+        		  
+        		 
+          
+          
+          //Solution[] offSpring = (Solution[]) crossoverOperator.execute(parents);
+          //mutationOperator.execute(offSpring[0]);
+          //mutationOperator.execute(offSpring[1]);
+          
+          for (int j=0; j <populationSize; j++){
+        	  //offSpring[j] = new Solution(1);
+	          
+	          problem_.evaluate(offSpring[j]);
+	          //problem_.evaluateConstraints(offSpring[0]);
+	          //problem_.evaluate(offSpring[1]);
+	          //problem_.evaluateConstraints(offSpring[1]);
+	          
+	          offspringPopulation.add(offSpring[j]);
+	          //offspringPopulation.add(offSpring[1]);
+	          /*boolean primero = true;
+	          if (primero) {
+					population.mejor = (Solucion) offspringPopulation.getMejor();
+					primero = false;
+				} else {
+					if (population.mejor.comparar(offspringPopulation.getMejor()))
+						population.mejor = (Solucion) offspringPopulation.getMejor();
+				}*/
+          }
+          
+          //csv.addValor(population.almacenarMejor(evaluations));
+          evaluations++;
+          population.siguienteGeneracion();
+          System.out.println(evaluations);
+        } // if                            
+      } // for
+
+      // Create the solutionSet union of solutionSet and offSpring
+     // union = ((SolutionSet) population).union(offspringPopulation);
+      
+      union = offspringPopulation;
+      // Ranking the union
+      ranking = new Ranking(union);
+
+      int remain = populationSize;
+      int index = 0;
+      Poblacion front = null;
+      population.clear();
+
+      // Obtain the next front
+      front = ranking.getSubfront(index);
+
+      while ((remain > 0) && (remain >= front.size())) {
+        //Assign crowding distance to individuals
+        distance.crowdingDistanceAssignment(front, problem_.getNumberOfObjectives());
+        //Add the individuals of this front
+        for (int k = 0; k < front.size(); k++) {
+          population.add(front.get(k));
+        } // for
+
+        //Decrement remain
+        remain = remain - front.size();
+
+        //Obtain the next front
+        index++;
+        if (remain > 0) {
+          front = ranking.getSubfront(index);
+        } // if        
+      } // while
+
+      // Remain is less than front(index).size, insert only the best one
+      if (remain > 0) {  // front contains individuals to insert                        
+        distance.crowdingDistanceAssignment(front, problem_.getNumberOfObjectives());
+        front.sort(new CrowdingComparator());
+        for (int k = 0; k < remain; k++) {
+          population.add(front.get(k));
+        } // for
+
+        remain = 0;
+      } // if                               
+
+      // This piece of code shows how to use the indicator object into the code
+      // of NSGA-II. In particular, it finds the number of evaluations required
+      // by the algorithm to obtain a Pareto front with a hypervolume higher
+      // than the hypervolume of the true Pareto front.
+      /*if ((indicators != null) &&
+          (requiredEvaluations == 0)) {
+        double HV = indicators.getHypervolume(population);
+        if (HV >= (0.98 * indicators.getTrueParetoFrontHypervolume())) {
+          requiredEvaluations = evaluations;
+        } // if
+      } // if*/
+    } // while
+    cantIt++;
+    
+
+    // Return as output parameter the required evaluations
+    setOutputParameter("evaluations", requiredEvaluations);
+
+    // Return the first non-dominated front
+    ranking = new Ranking(population);
+    ranking.getSubfront(0).printFeasibleFUN("FUN_NSGAII") ;
+
+    
+    
+
+
 	return ranking.getSubfront(0);
 	
 
@@ -344,6 +344,8 @@ public class NSGAII extends Algorithm {
       population.add(newSolution);
     } //for       */
 
-	
+	public int getCaso(){
+		return this.caso;
+	}
 } // NSGA-II
 
