@@ -48,7 +48,7 @@ public class CruceLink implements OperadorCruce {
 		// System.out.println("@Padre2@" + s2 + "@Padre2@.");
 
 		Collection<Servicio> hijoAux = new ArrayList<Servicio>();
-		Solution hijo = new Solution(1);
+		Solution hijo = new Solution(3);
 
 		List<Nodo> primeros = new ArrayList<Nodo>();
 		List<Nodo> iguales = new ArrayList<Nodo>();

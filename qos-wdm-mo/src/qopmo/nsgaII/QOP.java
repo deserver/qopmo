@@ -42,7 +42,7 @@ public class QOP extends Problem {
 	
 	public QOP (){
 		numberOfVariables_= 1;
-		numberOfObjectives_ = 1;
+		numberOfObjectives_ = 3;
 		numberOfConstraints_ = 0; 
 		problemName_ = "qop_wdm";
 		
@@ -59,6 +59,7 @@ public class QOP extends Problem {
 		// Fitness de la Solución
 		solution.fitness_ = 1 / solution.costo;
 		solution.setObjective(0, solution.fitness_);
+		
 
 		//return this.fitness;
 	}
@@ -131,6 +132,23 @@ public class QOP extends Problem {
 			}
 		}
 
+		if (solution.contadorFailBroncePrimario != 0){
+			solution.setObjective(1, solution.contadorFailBroncePrimario);
+		}else if (solution.contadorFailOroPrimario != 0){
+			solution.setObjective(1, solution.contadorFailOroPrimario);
+		}else if (solution.contadorFailPlataPrimario != 0){
+			solution.setObjective(1, solution.contadorFailPlataPrimario);
+		}else{
+			solution.setObjective(1, 0);
+		}
+		
+		if (solution.contadorFailOroAlternativo != 0){
+			solution.setObjective(2, solution.contadorFailOroAlternativo);
+		}else if (solution.contadorFailPlataAlternativo != 0){
+			solution.setObjective(2, solution.contadorFailPlataAlternativo);
+		}else{
+			solution.setObjective(2, 0);
+		}
 		// Fórmula de Costo de una Solución
 		double costo = (contadorCosto * a) + (cambiosLDO * b);
 		return costo;

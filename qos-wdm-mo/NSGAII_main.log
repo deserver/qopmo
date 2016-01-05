@@ -2,19 +2,19 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2016-01-01T07:58:34</date>
-  <millis>1451645914704</millis>
+  <date>2016-01-04T21:05:08</date>
+  <millis>1451952308653</millis>
   <sequence>0</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 1739ms</message>
+  <message>Total execution time: 1818ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:34</date>
-  <millis>1451645914707</millis>
+  <date>2016-01-04T21:05:08</date>
+  <millis>1451952308657</millis>
   <sequence>1</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -24,8 +24,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:34</date>
-  <millis>1451645914710</millis>
+  <date>2016-01-04T21:05:08</date>
+  <millis>1451952308780</millis>
   <sequence>2</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -35,19 +35,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:35</date>
-  <millis>1451645915702</millis>
+  <date>2016-01-04T21:05:09</date>
+  <millis>1451952309754</millis>
   <sequence>3</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 988ms</message>
+  <message>Total execution time: 965ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:35</date>
-  <millis>1451645915702</millis>
+  <date>2016-01-04T21:05:09</date>
+  <millis>1451952309755</millis>
   <sequence>4</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -57,8 +57,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:35</date>
-  <millis>1451645915705</millis>
+  <date>2016-01-04T21:05:09</date>
+  <millis>1451952309764</millis>
   <sequence>5</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -68,19 +68,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:36</date>
-  <millis>1451645916492</millis>
+  <date>2016-01-04T21:05:10</date>
+  <millis>1451952310756</millis>
   <sequence>6</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 785ms</message>
+  <message>Total execution time: 988ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:36</date>
-  <millis>1451645916492</millis>
+  <date>2016-01-04T21:05:10</date>
+  <millis>1451952310757</millis>
   <sequence>7</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -90,8 +90,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:36</date>
-  <millis>1451645916494</millis>
+  <date>2016-01-04T21:05:10</date>
+  <millis>1451952310763</millis>
   <sequence>8</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -101,19 +101,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:37</date>
-  <millis>1451645917614</millis>
+  <date>2016-01-04T21:05:11</date>
+  <millis>1451952311574</millis>
   <sequence>9</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 1118ms</message>
+  <message>Total execution time: 808ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:37</date>
-  <millis>1451645917614</millis>
+  <date>2016-01-04T21:05:11</date>
+  <millis>1451952311574</millis>
   <sequence>10</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -123,8 +123,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:37</date>
-  <millis>1451645917616</millis>
+  <date>2016-01-04T21:05:11</date>
+  <millis>1451952311586</millis>
   <sequence>11</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -134,19 +134,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:38</date>
-  <millis>1451645918226</millis>
+  <date>2016-01-04T21:05:13</date>
+  <millis>1451952313279</millis>
   <sequence>12</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 609ms</message>
+  <message>Total execution time: 1689ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:38</date>
-  <millis>1451645918227</millis>
+  <date>2016-01-04T21:05:13</date>
+  <millis>1451952313279</millis>
   <sequence>13</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -156,8 +156,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:38</date>
-  <millis>1451645918228</millis>
+  <date>2016-01-04T21:05:13</date>
+  <millis>1451952313287</millis>
   <sequence>14</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -167,19 +167,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:38</date>
-  <millis>1451645918914</millis>
+  <date>2016-01-04T21:05:14</date>
+  <millis>1451952314388</millis>
   <sequence>15</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 685ms</message>
+  <message>Total execution time: 1099ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:38</date>
-  <millis>1451645918915</millis>
+  <date>2016-01-04T21:05:14</date>
+  <millis>1451952314389</millis>
   <sequence>16</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -189,8 +189,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:38</date>
-  <millis>1451645918916</millis>
+  <date>2016-01-04T21:05:14</date>
+  <millis>1451952314397</millis>
   <sequence>17</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -200,19 +200,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:39</date>
-  <millis>1451645919525</millis>
+  <date>2016-01-04T21:05:15</date>
+  <millis>1451952315341</millis>
   <sequence>18</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 608ms</message>
+  <message>Total execution time: 940ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:39</date>
-  <millis>1451645919525</millis>
+  <date>2016-01-04T21:05:15</date>
+  <millis>1451952315342</millis>
   <sequence>19</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -222,8 +222,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:39</date>
-  <millis>1451645919526</millis>
+  <date>2016-01-04T21:05:15</date>
+  <millis>1451952315352</millis>
   <sequence>20</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -233,19 +233,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:40</date>
-  <millis>1451645920345</millis>
+  <date>2016-01-04T21:05:16</date>
+  <millis>1451952316288</millis>
   <sequence>21</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 818ms</message>
+  <message>Total execution time: 933ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:40</date>
-  <millis>1451645920345</millis>
+  <date>2016-01-04T21:05:16</date>
+  <millis>1451952316289</millis>
   <sequence>22</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -255,8 +255,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:40</date>
-  <millis>1451645920347</millis>
+  <date>2016-01-04T21:05:16</date>
+  <millis>1451952316299</millis>
   <sequence>23</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -266,19 +266,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:41</date>
-  <millis>1451645921085</millis>
+  <date>2016-01-04T21:05:17</date>
+  <millis>1451952317283</millis>
   <sequence>24</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 737ms</message>
+  <message>Total execution time: 980ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:41</date>
-  <millis>1451645921085</millis>
+  <date>2016-01-04T21:05:17</date>
+  <millis>1451952317284</millis>
   <sequence>25</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -288,8 +288,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:41</date>
-  <millis>1451645921086</millis>
+  <date>2016-01-04T21:05:17</date>
+  <millis>1451952317295</millis>
   <sequence>26</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -299,19 +299,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:41</date>
-  <millis>1451645921737</millis>
+  <date>2016-01-04T21:05:18</date>
+  <millis>1451952318416</millis>
   <sequence>27</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 650ms</message>
+  <message>Total execution time: 1117ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:41</date>
-  <millis>1451645921738</millis>
+  <date>2016-01-04T21:05:18</date>
+  <millis>1451952318416</millis>
   <sequence>28</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -321,8 +321,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:41</date>
-  <millis>1451645921739</millis>
+  <date>2016-01-04T21:05:18</date>
+  <millis>1451952318419</millis>
   <sequence>29</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -332,19 +332,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:42</date>
-  <millis>1451645922480</millis>
+  <date>2016-01-04T21:05:19</date>
+  <millis>1451952319411</millis>
   <sequence>30</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 740ms</message>
+  <message>Total execution time: 991ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:42</date>
-  <millis>1451645922480</millis>
+  <date>2016-01-04T21:05:19</date>
+  <millis>1451952319412</millis>
   <sequence>31</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -354,8 +354,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:42</date>
-  <millis>1451645922481</millis>
+  <date>2016-01-04T21:05:19</date>
+  <millis>1451952319422</millis>
   <sequence>32</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -365,19 +365,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:43</date>
-  <millis>1451645923115</millis>
+  <date>2016-01-04T21:05:20</date>
+  <millis>1451952320369</millis>
   <sequence>33</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 633ms</message>
+  <message>Total execution time: 944ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:43</date>
-  <millis>1451645923115</millis>
+  <date>2016-01-04T21:05:20</date>
+  <millis>1451952320370</millis>
   <sequence>34</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -387,8 +387,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:43</date>
-  <millis>1451645923116</millis>
+  <date>2016-01-04T21:05:20</date>
+  <millis>1451952320376</millis>
   <sequence>35</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -398,19 +398,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:43</date>
-  <millis>1451645923753</millis>
+  <date>2016-01-04T21:05:21</date>
+  <millis>1451952321376</millis>
   <sequence>36</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 636ms</message>
+  <message>Total execution time: 998ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:43</date>
-  <millis>1451645923753</millis>
+  <date>2016-01-04T21:05:21</date>
+  <millis>1451952321377</millis>
   <sequence>37</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -420,8 +420,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:43</date>
-  <millis>1451645923754</millis>
+  <date>2016-01-04T21:05:21</date>
+  <millis>1451952321379</millis>
   <sequence>38</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -431,19 +431,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:44</date>
-  <millis>1451645924499</millis>
+  <date>2016-01-04T21:05:22</date>
+  <millis>1451952322330</millis>
   <sequence>39</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 744ms</message>
+  <message>Total execution time: 949ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:44</date>
-  <millis>1451645924500</millis>
+  <date>2016-01-04T21:05:22</date>
+  <millis>1451952322331</millis>
   <sequence>40</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -453,8 +453,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:44</date>
-  <millis>1451645924501</millis>
+  <date>2016-01-04T21:05:22</date>
+  <millis>1451952322334</millis>
   <sequence>41</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -464,19 +464,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:45</date>
-  <millis>1451645925215</millis>
+  <date>2016-01-04T21:05:23</date>
+  <millis>1451952323175</millis>
   <sequence>42</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 713ms</message>
+  <message>Total execution time: 839ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:45</date>
-  <millis>1451645925216</millis>
+  <date>2016-01-04T21:05:23</date>
+  <millis>1451952323175</millis>
   <sequence>43</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -486,8 +486,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:45</date>
-  <millis>1451645925217</millis>
+  <date>2016-01-04T21:05:23</date>
+  <millis>1451952323178</millis>
   <sequence>44</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -497,19 +497,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:46</date>
-  <millis>1451645926261</millis>
+  <date>2016-01-04T21:05:23</date>
+  <millis>1451952323900</millis>
   <sequence>45</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 1043ms</message>
+  <message>Total execution time: 721ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:46</date>
-  <millis>1451645926262</millis>
+  <date>2016-01-04T21:05:23</date>
+  <millis>1451952323901</millis>
   <sequence>46</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -519,8 +519,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:46</date>
-  <millis>1451645926263</millis>
+  <date>2016-01-04T21:05:23</date>
+  <millis>1451952323909</millis>
   <sequence>47</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -530,19 +530,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:46</date>
-  <millis>1451645926942</millis>
+  <date>2016-01-04T21:05:24</date>
+  <millis>1451952324673</millis>
   <sequence>48</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 679ms</message>
+  <message>Total execution time: 761ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:46</date>
-  <millis>1451645926942</millis>
+  <date>2016-01-04T21:05:24</date>
+  <millis>1451952324674</millis>
   <sequence>49</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -552,8 +552,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:46</date>
-  <millis>1451645926943</millis>
+  <date>2016-01-04T21:05:24</date>
+  <millis>1451952324682</millis>
   <sequence>50</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -563,19 +563,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:47</date>
-  <millis>1451645927625</millis>
+  <date>2016-01-04T21:05:25</date>
+  <millis>1451952325638</millis>
   <sequence>51</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 681ms</message>
+  <message>Total execution time: 953ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:47</date>
-  <millis>1451645927625</millis>
+  <date>2016-01-04T21:05:25</date>
+  <millis>1451952325638</millis>
   <sequence>52</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -585,8 +585,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:47</date>
-  <millis>1451645927626</millis>
+  <date>2016-01-04T21:05:25</date>
+  <millis>1451952325655</millis>
   <sequence>53</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -596,19 +596,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:48</date>
-  <millis>1451645928313</millis>
+  <date>2016-01-04T21:05:26</date>
+  <millis>1451952326926</millis>
   <sequence>54</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 686ms</message>
+  <message>Total execution time: 1268ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:48</date>
-  <millis>1451645928314</millis>
+  <date>2016-01-04T21:05:26</date>
+  <millis>1451952326927</millis>
   <sequence>55</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -618,8 +618,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:48</date>
-  <millis>1451645928316</millis>
+  <date>2016-01-04T21:05:26</date>
+  <millis>1451952326930</millis>
   <sequence>56</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -629,19 +629,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:49</date>
-  <millis>1451645929065</millis>
+  <date>2016-01-04T21:05:27</date>
+  <millis>1451952327652</millis>
   <sequence>57</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 748ms</message>
+  <message>Total execution time: 720ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:49</date>
-  <millis>1451645929066</millis>
+  <date>2016-01-04T21:05:27</date>
+  <millis>1451952327653</millis>
   <sequence>58</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -651,8 +651,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:49</date>
-  <millis>1451645929067</millis>
+  <date>2016-01-04T21:05:27</date>
+  <millis>1451952327655</millis>
   <sequence>59</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -662,19 +662,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:49</date>
-  <millis>1451645929659</millis>
+  <date>2016-01-04T21:05:28</date>
+  <millis>1451952328474</millis>
   <sequence>60</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 591ms</message>
+  <message>Total execution time: 817ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:49</date>
-  <millis>1451645929660</millis>
+  <date>2016-01-04T21:05:28</date>
+  <millis>1451952328475</millis>
   <sequence>61</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -684,8 +684,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:49</date>
-  <millis>1451645929661</millis>
+  <date>2016-01-04T21:05:28</date>
+  <millis>1451952328480</millis>
   <sequence>62</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -695,19 +695,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:50</date>
-  <millis>1451645930342</millis>
+  <date>2016-01-04T21:05:29</date>
+  <millis>1451952329168</millis>
   <sequence>63</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 680ms</message>
+  <message>Total execution time: 686ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:50</date>
-  <millis>1451645930343</millis>
+  <date>2016-01-04T21:05:29</date>
+  <millis>1451952329169</millis>
   <sequence>64</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -717,8 +717,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:50</date>
-  <millis>1451645930344</millis>
+  <date>2016-01-04T21:05:29</date>
+  <millis>1451952329194</millis>
   <sequence>65</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -728,19 +728,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:50</date>
-  <millis>1451645930851</millis>
+  <date>2016-01-04T21:05:29</date>
+  <millis>1451952329938</millis>
   <sequence>66</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 507ms</message>
+  <message>Total execution time: 741ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:50</date>
-  <millis>1451645930851</millis>
+  <date>2016-01-04T21:05:29</date>
+  <millis>1451952329938</millis>
   <sequence>67</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -750,8 +750,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:50</date>
-  <millis>1451645930862</millis>
+  <date>2016-01-04T21:05:30</date>
+  <millis>1451952330048</millis>
   <sequence>68</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -761,19 +761,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:51</date>
-  <millis>1451645931433</millis>
+  <date>2016-01-04T21:05:30</date>
+  <millis>1451952330776</millis>
   <sequence>69</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 568ms</message>
+  <message>Total execution time: 722ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:51</date>
-  <millis>1451645931434</millis>
+  <date>2016-01-04T21:05:30</date>
+  <millis>1451952330776</millis>
   <sequence>70</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -783,8 +783,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:51</date>
-  <millis>1451645931434</millis>
+  <date>2016-01-04T21:05:30</date>
+  <millis>1451952330828</millis>
   <sequence>71</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -794,19 +794,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:52</date>
-  <millis>1451645932033</millis>
+  <date>2016-01-04T21:05:31</date>
+  <millis>1451952331498</millis>
   <sequence>72</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 598ms</message>
+  <message>Total execution time: 665ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:52</date>
-  <millis>1451645932034</millis>
+  <date>2016-01-04T21:05:31</date>
+  <millis>1451952331499</millis>
   <sequence>73</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -816,8 +816,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:52</date>
-  <millis>1451645932035</millis>
+  <date>2016-01-04T21:05:31</date>
+  <millis>1451952331527</millis>
   <sequence>74</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -827,19 +827,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:52</date>
-  <millis>1451645932628</millis>
+  <date>2016-01-04T21:05:32</date>
+  <millis>1451952332230</millis>
   <sequence>75</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 593ms</message>
+  <message>Total execution time: 698ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:52</date>
-  <millis>1451645932629</millis>
+  <date>2016-01-04T21:05:32</date>
+  <millis>1451952332231</millis>
   <sequence>76</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -849,8 +849,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:52</date>
-  <millis>1451645932629</millis>
+  <date>2016-01-04T21:05:32</date>
+  <millis>1451952332240</millis>
   <sequence>77</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -860,19 +860,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:53</date>
-  <millis>1451645933158</millis>
+  <date>2016-01-04T21:05:33</date>
+  <millis>1451952333024</millis>
   <sequence>78</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 528ms</message>
+  <message>Total execution time: 781ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:53</date>
-  <millis>1451645933158</millis>
+  <date>2016-01-04T21:05:33</date>
+  <millis>1451952333025</millis>
   <sequence>79</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -882,8 +882,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:53</date>
-  <millis>1451645933159</millis>
+  <date>2016-01-04T21:05:33</date>
+  <millis>1451952333114</millis>
   <sequence>80</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -893,19 +893,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:53</date>
-  <millis>1451645933729</millis>
+  <date>2016-01-04T21:05:33</date>
+  <millis>1451952333826</millis>
   <sequence>81</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 569ms</message>
+  <message>Total execution time: 706ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:53</date>
-  <millis>1451645933729</millis>
+  <date>2016-01-04T21:05:33</date>
+  <millis>1451952333827</millis>
   <sequence>82</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -915,8 +915,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:53</date>
-  <millis>1451645933730</millis>
+  <date>2016-01-04T21:05:33</date>
+  <millis>1451952333846</millis>
   <sequence>83</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -926,19 +926,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:54</date>
-  <millis>1451645934389</millis>
+  <date>2016-01-04T21:05:34</date>
+  <millis>1451952334609</millis>
   <sequence>84</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 658ms</message>
+  <message>Total execution time: 760ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:54</date>
-  <millis>1451645934389</millis>
+  <date>2016-01-04T21:05:34</date>
+  <millis>1451952334610</millis>
   <sequence>85</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -948,8 +948,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:54</date>
-  <millis>1451645934390</millis>
+  <date>2016-01-04T21:05:34</date>
+  <millis>1451952334625</millis>
   <sequence>86</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -959,19 +959,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935041</millis>
+  <date>2016-01-04T21:05:35</date>
+  <millis>1451952335241</millis>
   <sequence>87</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 650ms</message>
+  <message>Total execution time: 614ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935042</millis>
+  <date>2016-01-04T21:05:35</date>
+  <millis>1451952335242</millis>
   <sequence>88</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -981,8 +981,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935043</millis>
+  <date>2016-01-04T21:05:35</date>
+  <millis>1451952335261</millis>
   <sequence>89</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -992,19 +992,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935562</millis>
+  <date>2016-01-04T21:05:35</date>
+  <millis>1451952335954</millis>
   <sequence>90</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 519ms</message>
+  <message>Total execution time: 690ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935563</millis>
+  <date>2016-01-04T21:05:35</date>
+  <millis>1451952335954</millis>
   <sequence>91</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1014,8 +1014,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935563</millis>
+  <date>2016-01-04T21:05:35</date>
+  <millis>1451952335956</millis>
   <sequence>92</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1025,19 +1025,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935932</millis>
+  <date>2016-01-04T21:05:36</date>
+  <millis>1451952336373</millis>
   <sequence>93</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 368ms</message>
+  <message>Total execution time: 416ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:55</date>
-  <millis>1451645935933</millis>
+  <date>2016-01-04T21:05:36</date>
+  <millis>1451952336373</millis>
   <sequence>94</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1047,8 +1047,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:56</date>
-  <millis>1451645936162</millis>
+  <date>2016-01-04T21:05:36</date>
+  <millis>1451952336528</millis>
   <sequence>95</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1058,19 +1058,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:56</date>
-  <millis>1451645936536</millis>
+  <date>2016-01-04T21:05:37</date>
+  <millis>1451952337004</millis>
   <sequence>96</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 369ms</message>
+  <message>Total execution time: 470ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:56</date>
-  <millis>1451645936537</millis>
+  <date>2016-01-04T21:05:37</date>
+  <millis>1451952337005</millis>
   <sequence>97</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1080,8 +1080,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:56</date>
-  <millis>1451645936761</millis>
+  <date>2016-01-04T21:05:37</date>
+  <millis>1451952337011</millis>
   <sequence>98</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1091,19 +1091,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:57</date>
-  <millis>1451645937083</millis>
+  <date>2016-01-04T21:05:37</date>
+  <millis>1451952337488</millis>
   <sequence>99</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 317ms</message>
+  <message>Total execution time: 475ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:57</date>
-  <millis>1451645937084</millis>
+  <date>2016-01-04T21:05:37</date>
+  <millis>1451952337488</millis>
   <sequence>100</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1113,8 +1113,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:57</date>
-  <millis>1451645937100</millis>
+  <date>2016-01-04T21:05:37</date>
+  <millis>1451952337727</millis>
   <sequence>101</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1124,19 +1124,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:57</date>
-  <millis>1451645937486</millis>
+  <date>2016-01-04T21:05:38</date>
+  <millis>1451952338186</millis>
   <sequence>102</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 384ms</message>
+  <message>Total execution time: 453ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:57</date>
-  <millis>1451645937487</millis>
+  <date>2016-01-04T21:05:38</date>
+  <millis>1451952338187</millis>
   <sequence>103</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1146,8 +1146,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:57</date>
-  <millis>1451645937700</millis>
+  <date>2016-01-04T21:05:38</date>
+  <millis>1451952338212</millis>
   <sequence>104</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1157,19 +1157,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:58</date>
-  <millis>1451645938034</millis>
+  <date>2016-01-04T21:05:38</date>
+  <millis>1451952338699</millis>
   <sequence>105</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 329ms</message>
+  <message>Total execution time: 484ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:58</date>
-  <millis>1451645938035</millis>
+  <date>2016-01-04T21:05:38</date>
+  <millis>1451952338700</millis>
   <sequence>106</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1179,8 +1179,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:58</date>
-  <millis>1451645938108</millis>
+  <date>2016-01-04T21:05:38</date>
+  <millis>1451952338750</millis>
   <sequence>107</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1190,19 +1190,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:58</date>
-  <millis>1451645938448</millis>
+  <date>2016-01-04T21:05:39</date>
+  <millis>1451952339226</millis>
   <sequence>108</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 333ms</message>
+  <message>Total execution time: 471ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:58</date>
-  <millis>1451645938448</millis>
+  <date>2016-01-04T21:05:39</date>
+  <millis>1451952339226</millis>
   <sequence>109</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1212,8 +1212,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:58</date>
-  <millis>1451645938630</millis>
+  <date>2016-01-04T21:05:39</date>
+  <millis>1451952339307</millis>
   <sequence>110</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1223,19 +1223,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:59</date>
-  <millis>1451645939009</millis>
+  <date>2016-01-04T21:05:39</date>
+  <millis>1451952339805</millis>
   <sequence>111</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 374ms</message>
+  <message>Total execution time: 494ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:59</date>
-  <millis>1451645939010</millis>
+  <date>2016-01-04T21:05:39</date>
+  <millis>1451952339806</millis>
   <sequence>112</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1245,8 +1245,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:59</date>
-  <millis>1451645939179</millis>
+  <date>2016-01-04T21:05:40</date>
+  <millis>1451952340056</millis>
   <sequence>113</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1256,19 +1256,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:59</date>
-  <millis>1451645939581</millis>
+  <date>2016-01-04T21:05:40</date>
+  <millis>1451952340503</millis>
   <sequence>114</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 397ms</message>
+  <message>Total execution time: 435ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:59</date>
-  <millis>1451645939582</millis>
+  <date>2016-01-04T21:05:40</date>
+  <millis>1451952340503</millis>
   <sequence>115</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1278,8 +1278,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:58:59</date>
-  <millis>1451645939798</millis>
+  <date>2016-01-04T21:05:40</date>
+  <millis>1451952340658</millis>
   <sequence>116</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1289,19 +1289,19 @@
   <message>Objectives values have been writen to file FUN</message>
 </record>
 <record>
-  <date>2016-01-01T07:59:00</date>
-  <millis>1451645940135</millis>
+  <date>2016-01-04T21:05:41</date>
+  <millis>1451952341098</millis>
   <sequence>117</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
   <class>qopmo.nsgaII.NSGAII_main</class>
   <method>main</method>
   <thread>1</thread>
-  <message>Total execution time: 332ms</message>
+  <message>Total execution time: 435ms</message>
 </record>
 <record>
-  <date>2016-01-01T07:59:00</date>
-  <millis>1451645940136</millis>
+  <date>2016-01-04T21:05:41</date>
+  <millis>1451952341099</millis>
   <sequence>118</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
@@ -1311,8 +1311,8 @@
   <message>Variables values have been writen to file VAR</message>
 </record>
 <record>
-  <date>2016-01-01T07:59:00</date>
-  <millis>1451645940292</millis>
+  <date>2016-01-04T21:05:41</date>
+  <millis>1451952341174</millis>
   <sequence>119</sequence>
   <logger>jMetal</logger>
   <level>INFO</level>
