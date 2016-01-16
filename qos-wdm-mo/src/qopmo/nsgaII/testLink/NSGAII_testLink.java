@@ -19,7 +19,7 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package qopmo.nsgaII;
+package qopmo.nsgaII.testLink;
 
 
 
@@ -60,12 +60,12 @@ import qopmo.ag.Solucion;
  *     To be presented in: PPSN'08. Dortmund. September 2008.
  */
 
-public class NSGAII extends Algorithm {
+public class NSGAII_testLink extends Algorithm {
   /**
    * Constructor
    * @param problem Problem to solve
    */
-  public NSGAII(Problem problem, int x) {
+  public NSGAII_testLink(Problem problem, int x) {
     super (problem) ;
 	this.num = x;
 	if (this.num <= 10) {

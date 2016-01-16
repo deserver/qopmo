@@ -65,8 +65,6 @@ public class Poblacion {
 	
 	private int capacity;
 
-	// List<String[]> datosMejores = new ArrayList<String[]>();
-
 	/**
 	 * Constructor de la Población.
 	 * 
@@ -575,6 +573,17 @@ public class Poblacion {
 	       e.printStackTrace();
 	     }       
 	   } // printVariablesToFile
+	   
+	   public void printFinal(){
+	         for (Solution aSolutionsList_ : this.solutionsList) {
+	        	 int numberOfVariables = this.solutionsList.size();
+		           for (int j = 0; j < numberOfVariables; j++){
+		           	 System.out.println(aSolutionsList_.toString());
+		           }
+		             
+		         }
+	   }
+	   
 
 	  
 }

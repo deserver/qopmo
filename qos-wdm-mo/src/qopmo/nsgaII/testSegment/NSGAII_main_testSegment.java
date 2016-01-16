@@ -19,10 +19,12 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package qopmo.nsgaII;
+package qopmo.nsgaII.testSegment;
 
 import jmetal.core.Algorithm;
+import jmetal.core.Operator;
 import jmetal.core.Problem;
+import jmetal.core.SolutionSet;
 import jmetal.util.Configuration;
 import jmetal.util.JMException;
 
@@ -31,11 +33,15 @@ import java.util.HashMap;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import qopmo.nsgaII.QOP;
+import qopmo.ag.operadores.impl.*;
 import qopmo.ag.Poblacion;
 
 /** 
@@ -49,7 +55,7 @@ import qopmo.ag.Poblacion;
  *                  April 2009)
  */ 
 @RunWith(Parameterized.class)
-public class NSGAII_main {
+public class NSGAII_main_testSegment {
   public static Logger      logger_ ;      // Logger object
   public static FileHandler fileHandler_ ; // FileHandler object
 
@@ -72,6 +78,9 @@ public class NSGAII_main {
 	  
 	    Problem   problem   ; // The problem to solve
 	    Algorithm algorithm ; // The algorithm to use
+	    Operator  crossover ; // Crossover operator
+	    Operator  mutation  ; // Mutation operator
+	    Operator  selection ; // Selection operator
 	    
 	    HashMap  parameters ; // Operator parameters
 	    
@@ -81,12 +90,12 @@ public class NSGAII_main {
 	    fileHandler_ = new FileHandler("NSGAII_main.log"); 
 	    logger_.addHandler(fileHandler_) ;
 	        
-
 	    problem = new QOP();
 	    int corridas, caso;
 	    corridas =0;
+	    Poblacion population = new Poblacion(50);
 	    while(corridas < 40){
-		    algorithm = new NSGAII(problem, corridas);
+		    algorithm = new NSGAII_testSegment(problem, corridas);
 		    caso = getCaso(corridas);
 		    //algorithm = new ssNSGAII(problem);
 		
@@ -115,13 +124,10 @@ public class NSGAII_main {
 		    algorithm.addOperator("mutation",mutation);
 		    algorithm.addOperator("selection",selection);*/
 		    //algorithm.addOperator("torneobinario", torneobinario);
-		
-		    // Add the indicator object to the algorithm
-		    
 		    System.out.println("Corrida: "+corridas);
 		    // Execute the Algorithm
 		    long initTime = System.currentTimeMillis();
-		    Poblacion population = algorithm.execute();
+		    population = algorithm.execute();
 		    long estimatedTime = System.currentTimeMillis() - initTime;
 		    
 		    System.out.println("FIN Prueba Algoritmo Genetico. (Link-Oriented)");
@@ -145,6 +151,8 @@ public class NSGAII_main {
 		    } // if*/
 		    corridas++;
 	  }
+	    if (population != null)
+	    	population.printFinal();
 	  
   } //main
   

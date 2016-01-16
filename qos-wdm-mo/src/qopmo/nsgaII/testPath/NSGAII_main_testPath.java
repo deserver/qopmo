@@ -19,10 +19,12 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package qopmo.nsgaII;
+package qopmo.nsgaII.testPath;
 
 import jmetal.core.Algorithm;
+import jmetal.core.Operator;
 import jmetal.core.Problem;
+import jmetal.core.SolutionSet;
 import jmetal.util.Configuration;
 import jmetal.util.JMException;
 
@@ -31,11 +33,11 @@ import java.util.HashMap;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import qopmo.nsgaII.QOP;
+import qopmo.ag.operadores.impl.*;
 import qopmo.ag.Poblacion;
 
 /** 
@@ -49,7 +51,7 @@ import qopmo.ag.Poblacion;
  *                  April 2009)
  */ 
 @RunWith(Parameterized.class)
-public class NSGAII_main {
+public class NSGAII_main_testPath {
   public static Logger      logger_ ;      // Logger object
   public static FileHandler fileHandler_ ; // FileHandler object
 
@@ -72,6 +74,9 @@ public class NSGAII_main {
 	  
 	    Problem   problem   ; // The problem to solve
 	    Algorithm algorithm ; // The algorithm to use
+	    Operator  crossover ; // Crossover operator
+	    Operator  mutation  ; // Mutation operator
+	    Operator  selection ; // Selection operator
 	    
 	    HashMap  parameters ; // Operator parameters
 	    
@@ -86,7 +91,7 @@ public class NSGAII_main {
 	    int corridas, caso;
 	    corridas =0;
 	    while(corridas < 40){
-		    algorithm = new NSGAII(problem, corridas);
+		    algorithm = new NSGAII_testPath(problem, corridas);
 		    caso = getCaso(corridas);
 		    //algorithm = new ssNSGAII(problem);
 		

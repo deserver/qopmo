@@ -15,6 +15,7 @@ import qopmo.wdm.qop.Servicio;
 import qopmo.ag.Individuo;
 import qopmo.ag.Solucion;
 import qopmo.ag.operadores.OperadorCruce;
+import jmetal.core.Solution;
 
 /**
  * Implementación específica del Cruce mencionado en paper de cnunez.
@@ -39,15 +40,15 @@ public class CruceSegment implements OperadorCruce {
 
 	@Override
 	public Individuo cruzar(Individuo i1, Individuo i2) {
-		Solucion s1 = (Solucion) i1;
-		Solucion s2 = (Solucion) i2;
+		Solution s1 = (Solution) i1;
+		Solution s2 = (Solution) i2;
 
 		// System.out.println("---------------------------");
 		// System.out.println("@Padre1@" + s1 + "@Padre1@.");
 		// System.out.println("@Padre2@" + s2 + "@Padre2@.");
 
 		Collection<Servicio> hijoAux = new ArrayList<Servicio>();
-		Solucion hijo = new Solucion();
+		Solution hijo = new Solution(3);
 
 		List<Nodo> primeros = new ArrayList<Nodo>();
 		List<Nodo> iguales = new ArrayList<Nodo>();

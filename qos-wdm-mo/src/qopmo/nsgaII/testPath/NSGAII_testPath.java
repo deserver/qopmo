@@ -1,4 +1,3 @@
-//  NSGAII.java
 //
 //  Author:
 //       Antonio J. Nebro <antonio@lcc.uma.es>
@@ -19,7 +18,7 @@
 //  You should have received a copy of the GNU Lesser General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package qopmo.nsgaII;
+package qopmo.nsgaII.testPath;
 
 
 
@@ -60,12 +59,12 @@ import qopmo.ag.Solucion;
  *     To be presented in: PPSN'08. Dortmund. September 2008.
  */
 
-public class NSGAII extends Algorithm {
+public class NSGAII_testPath extends Algorithm {
   /**
    * Constructor
    * @param problem Problem to solve
    */
-  public NSGAII(Problem problem, int x) {
+  public NSGAII_testPath(Problem problem, int x) {
     super (problem) ;
 	this.num = x;
 	if (this.num <= 10) {
@@ -89,7 +88,8 @@ public class NSGAII extends Algorithm {
   
   public Poblacion population;
   public Red NSFNET;
-  public EsquemaRestauracion esquema = EsquemaRestauracion.Link;
+  private double[] probNiveles = { 0.4, 0.3, 0.3 };
+  private EsquemaRestauracion esquema = EsquemaRestauracion.FullPath;
   private CSVWriter csv = new CSVWriter();
   public Integer caso;
   private final Integer num;
